@@ -11,12 +11,12 @@ The original implementation used a fixed-rate `0.11` lerp, assigned `img.src` ev
 | Priority | Finding | Correction |
 | --- | --- | --- |
 | P0 | AERA copy implied ownership of supplied imagery that visibly carries another brand identity. | Reframed AERA as the fictional interface concept and the shoe as a supplied product reference; no new ownership or performance claims added. |
-| P0 | Commerce panel showed an invented `$180` price and a decorative cart. | Replaced price with `PRICE / TBC`, changed CTA to `ADD TO BAG`, added a functional bag drawer and count update. |
+| P0 | Commerce panel showed an invented `$180` price and a decorative cart. | Replaced the price with neutral product-page wording, changed the CTA to the official Nike redirect, and kept the bag as a transparent reference drawer. |
 | P1 | Navigation and progress were not semantically synchronized with the active chapter. | Added real section anchors, active nav state, and semantic chapter names: HERO, FORM, DETAIL, RESPONSE, REVEAL, SHOP. |
 | P1 | `FRAME 00` exposed implementation noise in the final product experience. | Replaced it with intentional `AERA / 001 · CHAPTER` metadata. |
 | P1 | Technical callouts used unverified material/specification language. | Replaced them with neutral labels such as `UPPER / STRUCTURE` and `HEEL / SUPPORT`. |
 | P1 | Hero copy could compete with the product silhouette and supporting text could lose contrast over the image. | Added a controlled left-side scrim, text plates, and a clearer primary CTA hierarchy without changing the product image. |
-| P2 | Accent lime was applied to most chapter titles. | Reserved the accent for the hero emphasis, active state, CTA, and key metadata. |
+| P2 | Accent lime was applied to most chapter titles. | Replaced it with muted cyan and reserved color accents for active state, CTA, and key metadata. |
 | P2 | Keyboard focus and tactile button states were incomplete. | Added visible focus rings and pressed/hover states across links, controls, and bag actions. |
 
 The supplied source frames remain pixel-unchanged. The static release now has dependency-free build/typecheck/lint validation; screenshot comparison and DevTools frame profiling still require a browser test harness for final production handoff.
@@ -30,10 +30,10 @@ The supplied source frames remain pixel-unchanged. The static release now has de
 - Added the official product redirect: [View on Nike](https://www.nike.com/launch/t/air-tech-challenge-2-photon-dust-and-dusty-cactus), opening in a new tab with safe external-link attributes.
 - The bag remains a transparent reference drawer; it does not claim to process orders or fabricate price, availability, or product facts.
 
-## React / Next.js component hierarchy
+## Conceptual component hierarchy
 
 ```text
-App
+Static app
 ├── SiteNav
 ├── ScrollProgressRail
 ├── ProductScene (fixed)
@@ -48,7 +48,7 @@ App
 │   ├── PerformanceSection
 │   ├── RevealSection
 │   └── CTASection
-│       └── ProductPanel (ColorSwatches, SizeSelector, AddToCart)
+│       └── ProductPanel (ColorSwatches, SizeSelector, NikeRedirect)
 └── SiteFooter
 ```
 

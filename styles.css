@@ -74,3 +74,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .section-performance .body-copy{margin-top:24px;max-width:330px}
 .section-performance .metric-card{z-index:3;right:12%;bottom:13%;}
 @media(max-width:700px){.section-performance .section-inner{width:auto;max-width:320px;margin:0;padding:12px 14px 14px 0;background:linear-gradient(90deg,rgba(17,19,19,.52),transparent)}.section-performance .section-inner h2{font-size:clamp(49px,15vw,68px);max-width:6ch}.section-performance .metric-card{right:20px;bottom:25%;}}
+
+/* Final interaction and mobile navigation pass. */
+.nav-menu{display:none}
+.mobile-nav{display:none}
+.sizes button{width:44px;height:44px}
+@media(max-width:700px){
+  .nav{padding:18px 14px}
+  .nav-menu{display:block;margin-left:auto;margin-right:4px;padding:10px}
+  .mobile-nav{position:fixed;inset:68px 14px auto;z-index:12;display:grid;gap:8px;padding:14px;background:rgba(17,19,19,.96);border:1px solid var(--line);box-shadow:0 18px 48px rgba(0,0,0,.3);transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+  .mobile-nav.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .mobile-nav a{padding:14px;color:var(--ink);text-decoration:none;font:11px var(--mono);border-bottom:1px solid var(--line)}
+  .mobile-nav a:last-child{border-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){.mobile-nav{transition:none}}

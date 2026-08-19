@@ -84,7 +84,7 @@ function render(progress) {
   progressName.textContent = sectionNames[active];
   const stageFocus = Math.max(0, Math.min(1, (progress - .12) / .16, (.88 - progress) / .18));
   sceneStage.style.setProperty('--stage-focus', String(stageFocus * .42));
-  navLinks.forEach(link => { const isActive = Number(link.dataset.navLink) === active; link.classList.toggle('active', isActive); if (isActive) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current'); });
+  navLinks.forEach(link => { const isActive = Number(link.dataset.navLink) === active; link.classList.toggle('active', isActive); if (isActive) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
   shoe.style.transform = `translate(-50%, -48%) scale(${1 + Math.sin(progress * Math.PI) * .05})`;
   sections.forEach((section, index) => { const distance = Math.abs(progress * 5 - index); const focus = Math.max(0, 1 - distance * 1.8); if (Math.abs(focus - lastSectionFocus[index]) > .02) { section.style.setProperty('--section-focus', String(focus)); section.style.setProperty('--section-opacity', String(.42 + focus * .58)); lastSectionFocus[index] = focus; } });
 }
@@ -104,8 +104,14 @@ document.querySelectorAll('.sizes button').forEach(button => button.addEventList
 document.querySelectorAll('.swatch').forEach(button => button.addEventListener('click', () => { document.querySelector('.swatch.active')?.classList.remove('active'); button.classList.add('active'); }));
 const cart = document.querySelector('[data-cart]');
 const drawer = document.querySelector('[data-cart-drawer]');
+const menuToggle = document.querySelector('[data-menu-toggle]');
+const mobileNav = document.querySelector('[data-mobile-nav]');
+function setMobileNav(open) { mobileNav.classList.toggle('open', open); mobileNav.setAttribute('aria-hidden', String(!open)); mobileNav.inert = !open; menuToggle.setAttribute('aria-expanded', String(open)); }
 function setCart(open) { drawer.classList.toggle('open', open); drawer.setAttribute('aria-hidden', String(!open)); drawer.inert = !open; if (open) drawer.querySelector('[data-cart-close]').focus(); }
 cart.addEventListener('click', () => setCart(true));
 document.querySelector('[data-cart-close]').addEventListener('click', () => { setCart(false); cart.focus(); });
-addEventListener('keydown', event => { if (event.key === 'Escape' && drawer.classList.contains('open')) { setCart(false); cart.focus(); } });
+menuToggle.addEventListener('click', () => setMobileNav(!mobileNav.classList.contains('open')));
+mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMobileNav(false)));
+addEventListener('keydown', event => { if (event.key === 'Escape' && drawer.classList.contains('open')) { setCart(false); cart.focus(); } if (event.key === 'Escape' && mobileNav.classList.contains('open')) { setMobileNav(false); menuToggle.focus(); } });
 setCart(false);
+setMobileNav(false);
