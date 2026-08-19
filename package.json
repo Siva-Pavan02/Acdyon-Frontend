@@ -1,0 +1,12 @@
+{
+  "name": "aera-immersive-footwear",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Dependency-free static AERA footwear experience.",
+  "scripts": {
+    "build": "node scripts/validate.mjs",
+    "typecheck": "node --check app.js",
+    "lint": "node scripts/validate.mjs",
+    "test": "node scripts/validate.mjs"
+  }
+}

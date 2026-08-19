@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111313" />
+    <meta name="description" content="AERA / 001 — an immersive editorial study of a supplied footwear reference, driven by scroll." />
+    <meta property="og:title" content="AERA / 001 — Every stride, intentional." />
+    <meta property="og:description" content="A cinematic scroll-driven footwear experience." />
+    <title>AERA — Every stride, intentional.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="nav" aria-label="Primary navigation">
+        <a class="wordmark" href="#hero" aria-label="AERA home">AERA<span class="wordmark-dot">.</span></a>
+        <nav class="nav-links" aria-label="Product sections">
+          <a href="#story" data-nav-link="1">The story</a><a href="#details" data-nav-link="2">Details</a><a href="#shop" data-nav-link="5">Shop</a>
+        </nav>
+        <button class="nav-cart" type="button" data-cart aria-label="Open cart">Cart <span>0</span></button>
+      </header>
+
+      <aside class="progress-rail" aria-label="Story progress">
+        <div class="progress-line"><span data-progress-fill></span></div>
+        <span data-progress-label>01 / 06 <b data-progress-name>FORM</b></span>
+      </aside>
+
+      <main id="main" class="scroll-stage">
+        <div class="scene" aria-hidden="true">
+          <div class="scene-stage"></div><div class="scene-glow"></div><div class="scene-grid"></div><div class="scene-grain"></div>
+          <canvas class="shoe-frame" data-shoe aria-label="AERA shoe rotating through a product view"></canvas>
+          <div class="scene-shadow"></div>
+          <div class="scene-caption"><span data-scene-meta>AERA / 001 · FORM</span><span>SCROLL TO MOVE</span></div>
+        </div>
+
+        <section id="hero" class="story-section section-hero" data-section="0">
+          <div class="section-inner hero-copy"><p class="eyebrow">AERA / 001 <span>SUPPLIED PRODUCT REFERENCE</span></p><h1>Every stride,<br /><em>intentional.</em></h1><p class="lede">A cinematic study of form, fit, and forward motion.</p><a class="primary-link" href="#story">Explore product <span>↘</span></a></div>
+          <div class="hero-note">01 <span>SCROLL TO BEGIN</span></div>
+        </section>
+
+        <section id="story" class="story-section section-silhouette" data-section="1">
+          <div class="section-inner split-copy"><p class="eyebrow">01 / FORM</p><h2>BUILT FOR<br /><span>EVERY STRIDE.</span></h2><p class="body-copy">A clean, adaptive silhouette that stays composed when your pace changes.</p></div>
+          <div class="annotation annotation-a"><span>01</span><b>LOW PROFILE</b><small>LESS BETWEEN YOU &amp; THE ROAD</small></div>
+        </section>
+
+        <section id="details" class="story-section section-details" data-section="2">
+          <div class="section-inner details-copy"><p class="eyebrow">02 / MATERIAL</p><h2>EVERY ANGLE,<br /><span>INTENTIONAL.</span></h2><p class="body-copy">Precision panels, considered tension, a finish that rewards a closer look.</p></div>
+          <div class="detail-chip chip-one">UPPER / STRUCTURE <span>Surface and tension</span></div><div class="detail-chip chip-two">HEEL / SUPPORT <span>Form and balance</span></div>
+        </section>
+
+        <section id="performance" class="story-section section-performance" data-section="3">
+          <div class="section-inner performance-copy"><p class="eyebrow">03 / RESPONSE</p><h2>LIGHT ON<br /><span>THE LANDING.</span></h2><p class="body-copy">Every component answers the next move. Nothing extra. Nothing in the way.</p></div>
+          <div class="metric-card"><span class="metric-kicker">AERA / 001</span><strong>04</strong><span>RESPONSE<br />CHAPTER</span></div>
+        </section>
+
+        <section id="reveal" class="story-section section-reveal" data-section="4">
+          <div class="section-inner reveal-copy"><p class="eyebrow">05 / REVEAL</p><h2>MEET<br /><span>AERA / 001.</span></h2><p class="body-copy">The supplied product reference, considered from every angle.</p></div>
+          <div class="reveal-stamp">AERA<br /><span>RUNNING SYSTEM</span></div>
+        </section>
+
+        <section id="shop" class="story-section section-cta" data-section="5">
+          <div class="section-inner cta-copy"><p class="eyebrow">06 / SHOP</p><h2>MAKE YOUR<br /><span>MOVE.</span></h2><p class="body-copy">AERA / 001 — supplied product reference. Product details to be confirmed.</p>
+            <div class="product-panel" aria-label="Product reference options"><div><span class="panel-label">COLOR / REFERENCE</span><button class="swatch active" aria-label="Select cloud reference color" type="button"></button><button class="swatch dusk" aria-label="Select dusk reference color" type="button"></button></div><div><span class="panel-label">SIZE / SELECT</span><div class="sizes"><button type="button">7</button><button type="button" class="selected">8</button><button type="button">9</button><button type="button">10</button><button type="button">11</button></div></div><div class="panel-footer"><strong class="price-placeholder">OFFICIAL PRODUCT PAGE</strong><a class="add-button" href="https://www.nike.com/launch/t/air-tech-challenge-2-photon-dust-and-dusty-cactus" target="_blank" rel="noopener noreferrer">View on Nike <span>↗</span></a></div></div>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer"><span>AERA / 001</span><span>DESIGNED FOR FORWARD MOTION</span><span>© 2026 AERA</span></footer>
+    </div>
+    <aside class="cart-drawer" data-cart-drawer aria-label="Shopping bag" aria-hidden="true"><button class="drawer-close" type="button" data-cart-close aria-label="Close shopping bag">×</button><p class="eyebrow">REFERENCE BAG</p><h2>AERA / 001</h2><p data-cart-copy>This concept does not process orders. Use the official product page for purchase details.</p><a class="drawer-action" href="https://www.nike.com/launch/t/air-tech-challenge-2-photon-dust-and-dusty-cactus" target="_blank" rel="noopener noreferrer">View on Nike ↗</a></aside>
+    <script src="./app.js"></script>
+  </body>
+</html>
