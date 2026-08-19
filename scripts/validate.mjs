@@ -1,8 +1,9 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
-const root = new URL('../', import.meta.url).pathname.replace(/^\//, '').replaceAll('/', '\\');
+const root = fileURLToPath(new URL('../', import.meta.url));
 const required = ['index.html', 'styles.css', 'app.js', 'README.md'];
 const fail = message => { console.error(`Validation failed: ${message}`); process.exitCode = 1; };
 
